@@ -1,22 +1,32 @@
 version: '3'
 services:
     send:
-        build: ./containerA
+        build:
+            context: ./containerA
+            dockerfile: Dockerfile
+            args:
+                PYTHON_VERSION: ${PYTHON_VERSION_ARG}
         volumes:
             - ./dataJson:/data
         links:
             - receive
         depends_on:
             - receive
+        
 
     receive:
-        build: ./containerB
+        build: 
+            context: ./containerB
+            dockerfile: Dockerfile
+            args:
+                PYTHON_VERSION: ${PYTHON_VERSION_ARG}
         ports:
             - "5000:5000"
         expose:
             - 5000
         volumes:
             - ./dataXml:/data
+        
 
 
 # volumes:
