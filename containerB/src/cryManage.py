@@ -80,7 +80,6 @@ def readingKey(keyType):
     return key
 
 def decryptingData(bodyJson):
-
     basePassword = bodyJson['password']
     baseFileData = bodyJson['fileData']
     fileName = bodyJson['filename']

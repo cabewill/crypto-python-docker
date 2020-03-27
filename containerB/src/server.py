@@ -1,6 +1,7 @@
 from flask import Flask,request
 import fileManipulation as fm
 import cryManage as cm
+
 server = Flask(__name__)
 
 @server.route("/receiver", methods=['POST'])

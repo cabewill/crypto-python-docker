@@ -1,16 +1,28 @@
 from json2xml import json2xml
-from json2xml.utils import readfromjson
+# from json2xml.utils import readfsromjson
 import os
+import logging
+import json
+
+logger = logging.getLogger(__name__) 
 
 def saveFile(filePath,data):
     with open(filePath, 'wb') as f:
         f.write(data)
 
-def concertJson2xml(filePath):
+def convertJson2xml(filePath):
     # filePath = '/data/teste.json'
-    data = readfromjson(filePath)
-    print(data)
-    return json2xml.Json2xml(data).to_xml()
+    try:
+        with open(filePath) as json_file:
+            data = json.load(json_file)
+        logger.debug("data json :: {}".format(data))
+        dataXml = json2xml.Json2xml(data).to_xml()
+        logger.debug("data xml :: {}".format(dataXml))
+        return dataXml
+    except ValueError as e :
+        logger.error(e)
+        return None
+    
 
 def getFileExtension(filePath):
     filename, file_extension = os.path.splitext(filePath)

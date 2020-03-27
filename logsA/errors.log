@@ -1,0 +1,7 @@
+2020-03-27 13:51:30,160 - {fileManipulation.py:25} - ERROR :: Extra data: line 1 column 7 (char 6)
+2020-03-27 13:55:05,417 - {fileManipulation.py:25} - ERROR :: Extra data: line 1 column 7 (char 6)
+2020-03-27 13:55:38,561 - {fileManipulation.py:25} - ERROR :: Extra data: line 1 column 7 (char 6)
+2020-03-27 13:56:41,891 - {fileManipulation.py:25} - ERROR :: Extra data: line 1 column 7 (char 6)
+2020-03-27 13:56:46,752 - {fileManipulation.py:25} - ERROR :: Extra data: line 1 column 7 (char 6)
+2020-03-27 14:05:36,251 - {fileManipulation.py:24} - ERROR :: Extra data: line 1 column 7 (char 6)
+2020-03-27 14:05:41,649 - {fileManipulation.py:24} - ERROR :: Expecting value: line 1 column 1 (char 0)

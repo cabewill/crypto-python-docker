@@ -3,21 +3,22 @@ services:
     send:
         build:
             context: ./containerA
-            dockerfile: Dockerfile
+            dockerfile: Dockerfile            
             args:
                 PYTHON_VERSION: ${PYTHON_VERSION_ARG}
         volumes:
             - ./dataJson:/data
+            - ./logsA:/log
         links:
             - receive
         depends_on:
             - receive
-        
+        container_name: send-neueda
 
     receive:
         build: 
             context: ./containerB
-            dockerfile: Dockerfile
+            dockerfile: Dockerfile            
             args:
                 PYTHON_VERSION: ${PYTHON_VERSION_ARG}
         ports:
@@ -26,6 +27,8 @@ services:
             - 5000
         volumes:
             - ./dataXml:/data
+            - ./logsB:/log
+        container_name: receive-neueda
         
 
 

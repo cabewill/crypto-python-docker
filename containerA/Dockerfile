@@ -16,7 +16,7 @@ COPY . /app
 FROM python:${PYTHON_VERSION} as prod
 COPY --from=build /opt/venv /opt/venv
 WORKDIR /app
-RUN mkdir /data && mkdir /key
+RUN mkdir /data && mkdir /key && mkdir /log
 COPY /src /app
 ENV PATH="/opt/venv/bin:$PATH"
 # CMD ["sh"]
